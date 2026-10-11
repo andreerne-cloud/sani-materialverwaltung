@@ -6,7 +6,7 @@ Abgelöst aus der früheren Access-Datenbank `Materialverwaltung_Sani.accdb`.
 
 ## Installation
 
-1. Unter **Releases** die neueste `sani-materialverwaltung-x.y.z.zip` herunterladen.
+1. Im Ordner [`releases/`](releases/) die neueste `sani-materialverwaltung-x.y.z.zip` öffnen und mit **Download** (Symbol oben rechts) herunterladen.
 2. In WordPress: **Plugins › Installieren › Plugin hochladen** › ZIP wählen › **Jetzt installieren** › **Aktivieren**.
 3. **Einstellungen › Materialverwaltung**:
    - Rechte festlegen (wer ansehen, wer bearbeiten darf).
@@ -42,6 +42,7 @@ Die App speichert alles als JSON-Dokumente in vier Sammlungen (`artikel`, `plaet
 
 ```bash
 ./tools/build-zip.sh        # erzeugt dist/sani-materialverwaltung-<version>.zip
+cp dist/sani-materialverwaltung-<version>.zip releases/   # zum Herunterladen ablegen
 ```
 
 Die Version steht an zwei Stellen in `sani-materialverwaltung.php` (Kopfzeile `Version:` und `SANI_MV_VERSION`). Ändert sich die Datenstruktur, zusätzlich `SANI_MV_DB_VERSION` erhöhen und die Umstellung in `Sani_MV_Store::maybe_upgrade()` ergänzen.
